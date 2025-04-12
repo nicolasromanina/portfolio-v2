@@ -18,7 +18,7 @@ interface TerminalHistoryItem {
 }
 
 const WELCOME_MESSAGE = `
-Welcome to CryptoTerminal v1.0.0
+Welcome to DevTerminal v1.0.0
 Type 'help' to see available commands.
 `;
 
@@ -58,12 +58,12 @@ const Terminal = ({ initialPath = '/', additionalCommands = [] }: TerminalProps)
       name: 'ls',
       description: 'List available sections',
       handler: () => {
-        return 'assets\nportfolio\nsettings';
+        return 'skills\nprojects\nabout\ncontact';
       }
     },
     {
       name: 'cd',
-      description: 'Navigate to a section (e.g., cd assets)',
+      description: 'Navigate to a section (e.g., cd skills)',
       handler: (args) => {
         if (!args.length) {
           return 'Usage: cd <section>';
@@ -71,17 +71,22 @@ const Terminal = ({ initialPath = '/', additionalCommands = [] }: TerminalProps)
         
         const destination = args[0];
         switch (destination) {
-          case 'assets':
-            setCurrentPath('/assets');
-            navigate('/');
-            return `Changed directory to /assets`;
-          case 'detail':
-            if (args.length < 2) {
-              return 'Usage: cd detail <asset-id>';
-            }
-            setCurrentPath(`/detail/${args[1]}`);
-            navigate(`/detail/${args[1]}`);
-            return `Changed directory to /detail/${args[1]}`;
+          case 'skills':
+            setCurrentPath('/skills');
+            navigate('/skills');
+            return `Changed directory to /skills`;
+          case 'projects':
+            setCurrentPath('/projects');
+            navigate('/projects');
+            return `Changed directory to /projects`;
+          case 'about':
+            setCurrentPath('/about');
+            navigate('/about');
+            return `Changed directory to /about`;
+          case 'contact':
+            setCurrentPath('/contact');
+            navigate('/contact');
+            return `Changed directory to /contact`;
           case '..':
             setCurrentPath('/');
             navigate('/');
@@ -93,21 +98,49 @@ const Terminal = ({ initialPath = '/', additionalCommands = [] }: TerminalProps)
     },
     {
       name: 'about',
-      description: 'Show information about this application',
+      description: 'Show information about this developer',
       handler: () => {
         return `
-CryptoTerminal v1.0.0
-A neo-brutalist CLI-inspired cryptocurrency dashboard.
-Uses CoinCap API for real-time crypto data.
+Full Stack Developer with 5+ years of experience.
+Specializing in React, TypeScript, and Node.js.
+Currently working on innovative web applications with a focus on performance and user experience.
         `;
       }
     },
     {
-      name: 'refresh',
-      description: 'Refresh the current data',
+      name: 'skills',
+      description: 'List developer skills',
       handler: () => {
-        window.location.reload();
-        return 'Refreshing data...';
+        return `
+Frontend: React, TypeScript, Next.js, Tailwind CSS
+Backend: Node.js, Express, PostgreSQL, MongoDB
+DevOps: Docker, AWS, CI/CD, Git
+Other: UI/UX Design, Agile Methodologies, Team Leadership
+        `;
+      }
+    },
+    {
+      name: 'projects',
+      description: 'Show recent projects',
+      handler: () => {
+        return `
+1. E-commerce Platform (React, Node.js, MongoDB)
+2. Real-time Analytics Dashboard (Next.js, D3.js)
+3. Mobile Banking App (React Native, GraphQL)
+4. Content Management System (TypeScript, PostgreSQL)
+        `;
+      }
+    },
+    {
+      name: 'contact',
+      description: 'Display contact information',
+      handler: () => {
+        return `
+Email: developer@example.com
+GitHub: github.com/developer
+LinkedIn: linkedin.com/in/developer
+Twitter: twitter.com/developer
+        `;
       }
     }
   ];
@@ -175,7 +208,7 @@ Uses CoinCap API for real-time crypto data.
         ))}
       </div>
       <form onSubmit={handleSubmit} className="mt-2 flex">
-        <div className="terminal-prompt mr-2">{currentPath}></div>
+        <div className="terminal-prompt mr-2">{currentPath}{'>'}</div>
         <input
           type="text"
           value={input}

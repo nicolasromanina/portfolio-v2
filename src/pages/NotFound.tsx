@@ -18,7 +18,7 @@ const NotFound = () => {
     <div className="min-h-screen flex items-center justify-center bg-terminal-background">
       <div className="brutalist-card max-w-md w-full p-8">
         <h1 className="text-4xl font-bold mb-4 text-brutalist-accent">404</h1>
-        <p className="text-xl mb-6">Terminal Error: File Not Found</p>
+        <p className="text-xl mb-6">Terminal Error: Path Not Found</p>
         <p className="text-terminal-muted mb-8">
           The requested path was not found on this server.
         </p>
