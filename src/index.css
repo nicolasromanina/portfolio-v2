@@ -140,4 +140,45 @@
   .section-heading {
     @apply text-terminal-green text-2xl font-bold mb-6 flex items-center space-x-2;
   }
+  
+  /* Added styles for improved section designs */
+  .feature-card {
+    @apply brutalist-card overflow-hidden relative border-b-4 border-r-4 border-brutalist-black hover:border-terminal-green;
+  }
+  
+  .feature-card-header {
+    @apply absolute top-0 left-0 right-0 bg-gradient-to-r from-terminal-background to-secondary p-4 border-b-2 border-terminal-green;
+  }
+  
+  .skill-bar {
+    @apply h-3 bg-brutalist-grey rounded-full overflow-hidden mt-2;
+  }
+  
+  .skill-progress {
+    @apply h-full bg-gradient-to-r from-terminal-green to-terminal-green/70 rounded-full;
+  }
+  
+  .content-section {
+    @apply py-12 animate-fade-in;
+  }
+  
+  .highlight-text {
+    @apply text-terminal-green font-bold;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:bg-terminal-green/10 hover:border-terminal-green;
+  }
+  
+  .timeline-item {
+    @apply pl-6 pb-8 border-l-2 border-terminal-green relative before:absolute before:w-4 before:h-4 before:bg-terminal-green before:border-2 before:border-brutalist-black before:rounded-full before:-left-[9px] before:top-0;
+  }
+  
+  .tech-tag {
+    @apply inline-block px-3 py-1 bg-brutalist-grey/30 border border-brutalist-black rounded-sm text-sm mr-2 mb-2 hover:bg-terminal-green/20 transition-colors;
+  }
 }
