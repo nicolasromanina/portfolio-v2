@@ -1,39 +1,41 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 240 5.9% 10%;
+    --background: 230 25% 15%;
     --foreground: 0 0% 98%;
 
-    --card: 240 5.9% 10%;
+    --card: 230 25% 15%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 5.9% 10%;
+    --popover: 230 25% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 120 100% 50%;
+    --primary: 150 84% 58%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 230 20% 20%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
+    --muted: 230 20% 20%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent: 230 20% 20%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 120 100% 35%;
-    --input: 240 3.7% 15.9%;
-    --ring: 120 100% 50%;
+    --border: 150 84% 58%;
+    --input: 230 20% 20%;
+    --ring: 150 84% 58%;
 
-    --radius: 0;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -52,7 +54,7 @@
   }
 
   body {
-    @apply bg-terminal-background text-terminal-text font-mono;
+    @apply bg-terminal-background text-terminal-text font-sans antialiased;
   }
   
   /* Custom scrollbar for the terminal feel */
@@ -62,22 +64,22 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: #1A1F2C;
+    background: #1A1A2E;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #00FF41;
-    border: 1px solid #1A1F2C;
+    background: #38EF7D;
+    border: 1px solid #1A1A2E;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #00CC33;
+    background: #2BDE6C;
   }
 }
 
 @layer components {
   .terminal-container {
-    @apply bg-terminal-background border-2 border-terminal-border rounded-none p-6 font-mono text-terminal-text shadow-lg;
+    @apply bg-terminal-background border-2 border-terminal-border rounded-lg p-6 font-mono text-terminal-text shadow-lg;
   }
   
   .terminal-input {
@@ -97,14 +99,14 @@
   }
   
   .brutalist-card {
-    @apply bg-brutalist-white border-2 border-brutalist-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+    @apply bg-brutalist-white border-2 border-brutalist-black p-6 shadow-brutalist transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-brutalist;
   }
   
   .brutalist-button {
     @apply bg-brutalist-white border-2 border-brutalist-black px-4 py-2 font-bold 
-    shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] 
-    hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] 
-    active:shadow-none transition-all duration-100;
+    shadow-brutalist-sm hover:translate-x-[-2px] hover:translate-y-[-2px] 
+    hover:shadow-brutalist active:translate-x-[0px] active:translate-y-[0px] 
+    active:shadow-brutalist-hover transition-all duration-100;
   }
   
   .brutalist-table {
@@ -129,5 +131,13 @@
   
   .brutalist-table tr:hover {
     @apply bg-terminal-green/20;
+  }
+
+  .modern-grid {
+    @apply grid gap-6 animate-fade-in;
+  }
+
+  .section-heading {
+    @apply text-terminal-green text-2xl font-bold mb-6 flex items-center space-x-2;
   }
 }

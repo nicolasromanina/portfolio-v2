@@ -54,17 +54,17 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				terminal: {
-					green: '#00FF41',
-					background: '#1A1F2C',
-					border: '#2BFF41',
+					green: '#38EF7D',
+					background: '#1A1A2E',
+					border: '#38EF7D',
 					text: '#FFFFFF',
-					muted: '#8E9196'
+					muted: '#A0AEC0'
 				},
 				brutalist: {
 					black: '#000000',
 					white: '#FFFFFF',
-					grey: '#D9D9D9',
-					accent: '#FF3333'
+					grey: '#F0F0F0',
+					accent: '#FF576A'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -102,15 +102,31 @@ export default {
 				'cursor-blink': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(10px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'cursor-blink': 'cursor-blink 1s infinite'
+				'cursor-blink': 'cursor-blink 1s infinite',
+				'slide-up': 'slide-up 0.3s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out'
 			},
 			fontFamily: {
-				mono: ['Courier New', 'monospace'],
+				mono: ['Space Mono', 'Courier New', 'monospace'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+			},
+			boxShadow: {
+				'brutalist': '8px 8px 0px 0px rgba(0,0,0,1)',
+				'brutalist-sm': '4px 4px 0px 0px rgba(0,0,0,1)',
+				'brutalist-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
 			}
 		}
 	},
