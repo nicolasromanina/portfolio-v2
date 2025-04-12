@@ -20,8 +20,8 @@ const NotFound = () => {
       <div className="brutalist-card max-w-md w-full animate-fade-in bg-gradient-to-b from-brutalist-white to-brutalist-grey/30">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
-            <AlertTriangle className="text-brutalist-accent h-8 w-8" />
-            <h1 className="text-4xl font-bold text-brutalist-accent">404</h1>
+            <AlertTriangle className="text-terminal-green h-8 w-8" />
+            <h1 className="text-4xl font-bold text-terminal-green">404</h1>
           </div>
           <div className="glass-panel">
             <code className="text-terminal-green text-xs">ERROR_PATH_NOT_FOUND</code>
