@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				terminal: {
+					green: '#00FF41',
+					background: '#1A1F2C',
+					border: '#2BFF41',
+					text: '#FFFFFF',
+					muted: '#8E9196'
+				},
+				brutalist: {
+					black: '#000000',
+					white: '#FFFFFF',
+					grey: '#D9D9D9',
+					accent: '#FF3333'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +98,19 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'cursor-blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'cursor-blink': 'cursor-blink 1s infinite'
+			},
+			fontFamily: {
+				mono: ['Courier New', 'monospace'],
 			}
 		}
 	},
