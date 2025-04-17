@@ -318,7 +318,7 @@ Based in Madagascar, with a focus on modern web technologies.
                   transition={{ duration: 0.3 }}
                 >
                   <img 
-                    src="https://avatars.githubusercontent.com/u/12345678?v=4" 
+                    src="/profile.jpg" 
                     alt="Nicolas Romanina" 
                     className="object-cover w-full h-full"
                     loading="lazy"
