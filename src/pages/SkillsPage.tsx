@@ -1,7 +1,7 @@
-
 import React from 'react';
 import Terminal from '../components/Terminal';
 import { Cpu, Code, Server, GitBranch } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const SkillsPage = () => {
   return (
@@ -74,6 +74,14 @@ const SkillsPage = () => {
                 </div>
               </div>
             </div>
+            <div className="mt-6">
+              <Button 
+                variant="outline" 
+                className="w-full text-sm font-medium mt-4"
+              >
+                View Frontend Projects
+              </Button>
+            </div>
           </div>
           
           <div className="brutalist-card p-8 h-full hover-glow">
@@ -128,6 +136,14 @@ const SkillsPage = () => {
                 </div>
               </div>
             </div>
+            <div className="mt-6">
+              <Button 
+                variant="outline" 
+                className="w-full text-sm font-medium mt-4"
+              >
+                View Backend Projects
+              </Button>
+            </div>
           </div>
           
           <div className="brutalist-card p-8 h-full hover-glow">
@@ -181,6 +197,14 @@ const SkillsPage = () => {
                   <div className="skill-progress" style={{ width: '65%' }}></div>
                 </div>
               </div>
+            </div>
+            <div className="mt-6">
+              <Button 
+                variant="outline" 
+                className="w-full text-sm font-medium mt-4"
+              >
+                View DevOps Projects
+              </Button>
             </div>
           </div>
         </div>

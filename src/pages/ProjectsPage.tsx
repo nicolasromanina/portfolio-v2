@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Terminal from '../components/Terminal';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Briefcase, ExternalLink, Star, Zap, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ProjectsPage = () => {
   return (
@@ -56,11 +56,11 @@ const ProjectsPage = () => {
                     <span className="tech-tag">Redux</span>
                   </div>
                   <div className="flex gap-2">
-                    <button className="brutalist-button flex items-center space-x-2">
+                    <Button className="flex items-center gap-2 text-sm font-medium">
                       <span>Live Demo</span>
                       <ExternalLink className="w-4 h-4" />
-                    </button>
-                    <button className="brutalist-button">GitHub</button>
+                    </Button>
+                    <Button variant="outline" className="text-sm font-medium">GitHub</Button>
                   </div>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
@@ -103,11 +103,11 @@ const ProjectsPage = () => {
                     <span className="tech-tag">AWS</span>
                   </div>
                   <div className="flex gap-2">
-                    <button className="brutalist-button flex items-center space-x-2">
+                    <Button className="flex items-center gap-2 text-sm font-medium">
                       <span>Live Demo</span>
                       <ExternalLink className="w-4 h-4" />
-                    </button>
-                    <button className="brutalist-button">GitHub</button>
+                    </Button>
+                    <Button variant="outline" className="text-sm font-medium">GitHub</Button>
                   </div>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
@@ -150,11 +150,11 @@ const ProjectsPage = () => {
                     <span className="tech-tag">React</span>
                   </div>
                   <div className="flex gap-2">
-                    <button className="brutalist-button flex items-center space-x-2">
+                    <Button className="flex items-center gap-2 text-sm font-medium">
                       <span>Live Demo</span>
                       <ExternalLink className="w-4 h-4" />
-                    </button>
-                    <button className="brutalist-button">GitHub</button>
+                    </Button>
+                    <Button variant="outline" className="text-sm font-medium">GitHub</Button>
                   </div>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
@@ -195,11 +195,11 @@ const ProjectsPage = () => {
                     <span className="tech-tag">Expo</span>
                   </div>
                   <div className="flex gap-2">
-                    <button className="brutalist-button flex items-center space-x-2">
+                    <Button className="flex items-center gap-2 text-sm font-medium">
                       <span>App Store</span>
                       <ExternalLink className="w-4 h-4" />
-                    </button>
-                    <button className="brutalist-button">Google Play</button>
+                    </Button>
+                    <Button variant="outline" className="text-sm font-medium">Google Play</Button>
                   </div>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">

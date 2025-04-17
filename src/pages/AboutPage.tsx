@@ -3,6 +3,7 @@ import Terminal from '../components/Terminal';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { User, GraduationCap, Briefcase, Phone, Mail, MapPin, ChevronRight, Download, ExternalLink } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   return (
@@ -63,11 +64,11 @@ const AboutPage = () => {
                   </div>
                   
                   <div className="flex flex-wrap gap-3 mt-6">
-                    <Button variant="default" className="flex items-center gap-2">
+                    <Button variant="default" className="flex items-center gap-2 px-4 py-2 text-sm font-medium">
                       <Download className="w-4 h-4" />
                       Download CV
                     </Button>
-                    <Button variant="outline" className="flex items-center gap-2">
+                    <Button variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm font-medium">
                       <ExternalLink className="w-4 h-4" />
                       View Portfolio
                     </Button>
