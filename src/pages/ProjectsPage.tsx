@@ -2,7 +2,7 @@
 import React from 'react';
 import Terminal from '../components/Terminal';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Briefcase, ExternalLink } from "lucide-react";
+import { Briefcase, ExternalLink, Star, Zap, Award } from "lucide-react";
 
 const ProjectsPage = () => {
   return (
@@ -31,6 +31,7 @@ const ProjectsPage = () => {
                   <CardDescription className="font-mono text-xs mt-1">React, Node.js, MongoDB, Redux</CardDescription>
                 </div>
                 <div className="glass-panel flex items-center space-x-1">
+                  <Star className="h-3 w-3 text-terminal-green" />
                   <span className="text-xs">Featured</span>
                 </div>
               </div>
@@ -62,8 +63,8 @@ const ProjectsPage = () => {
                     <button className="brutalist-button">GitHub</button>
                   </div>
                 </div>
-                <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow">
-                  <p className="text-center font-bold">Project Screenshot</p>
+                <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="E-commerce Platform" className="object-cover w-full h-full" />
                 </div>
               </div>
             </CardContent>
@@ -77,6 +78,7 @@ const ProjectsPage = () => {
                   <CardDescription className="font-mono text-xs mt-1">Next.js, D3.js, GraphQL, AWS</CardDescription>
                 </div>
                 <div className="glass-panel flex items-center space-x-1">
+                  <Zap className="h-3 w-3 text-terminal-green" />
                   <span className="text-xs">New</span>
                 </div>
               </div>
@@ -108,8 +110,8 @@ const ProjectsPage = () => {
                     <button className="brutalist-button">GitHub</button>
                   </div>
                 </div>
-                <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow">
-                  <p className="text-center font-bold">Project Screenshot</p>
+                <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" alt="Analytics Dashboard" className="object-cover w-full h-full" />
                 </div>
               </div>
             </CardContent>
@@ -123,6 +125,7 @@ const ProjectsPage = () => {
                   <CardDescription className="font-mono text-xs mt-1">TypeScript, PostgreSQL, Express, React</CardDescription>
                 </div>
                 <div className="glass-panel flex items-center space-x-1">
+                  <Award className="h-3 w-3 text-terminal-green" />
                   <span className="text-xs">Award-winning</span>
                 </div>
               </div>
@@ -154,8 +157,53 @@ const ProjectsPage = () => {
                     <button className="brutalist-button">GitHub</button>
                   </div>
                 </div>
-                <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow">
-                  <p className="text-center font-bold">Project Screenshot</p>
+                <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Content Management System" className="object-cover w-full h-full" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card className="feature-card group">
+            <CardHeader className="pb-2">
+              <div className="flex justify-between items-start">
+                <div>
+                  <CardTitle className="font-sans text-2xl">Mobile App for Fitness Tracking</CardTitle>
+                  <CardDescription className="font-mono text-xs mt-1">React Native, Firebase, Redux</CardDescription>
+                </div>
+                <div className="glass-panel flex items-center space-x-1">
+                  <span className="text-xs">Mobile App</span>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="md:col-span-2">
+                  <p className="font-sans mb-4">A fitness tracking mobile application that helps users track their workouts, set goals, and monitor their progress over time.</p>
+                  <h3 className="font-bold mb-2">Key Features:</h3>
+                  <ul className="list-disc pl-5 mb-4">
+                    <li>Workout tracking and scheduling</li>
+                    <li>Custom workout creation</li>
+                    <li>Progress statistics and visualization</li>
+                    <li>Social sharing capabilities</li>
+                    <li>Notifications and reminders</li>
+                  </ul>
+                  <div className="flex flex-wrap mb-6">
+                    <span className="tech-tag">React Native</span>
+                    <span className="tech-tag">Firebase</span>
+                    <span className="tech-tag">Redux</span>
+                    <span className="tech-tag">Expo</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <button className="brutalist-button flex items-center space-x-2">
+                      <span>App Store</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </button>
+                    <button className="brutalist-button">Google Play</button>
+                  </div>
+                </div>
+                <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Fitness Tracking App" className="object-cover w-full h-full" />
                 </div>
               </div>
             </CardContent>
