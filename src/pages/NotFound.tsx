@@ -2,8 +2,9 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Terminal as TerminalIcon, AlertTriangle, ChevronLeft } from "lucide-react";
+import { Terminal as TerminalIcon, AlertTriangle, ChevronLeft, Home } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
@@ -47,13 +48,25 @@ const NotFound = () => {
                 </code>
               </div>
               
-              <button
-                onClick={() => navigate('/')}
-                className="brutalist-button w-full flex items-center justify-center space-x-2"
-              >
-                <ChevronLeft className="w-5 h-5" />
-                <span>Return to Home</span>
-              </button>
+              <div className="flex gap-4 mt-6">
+                <Button 
+                  onClick={() => navigate('/')}
+                  variant="default"
+                  className="flex items-center justify-center gap-2 w-full"
+                >
+                  <Home className="w-4 h-4" />
+                  <span>Return Home</span>
+                </Button>
+                
+                <Button 
+                  onClick={() => navigate(-1)}
+                  variant="outline"
+                  className="flex items-center justify-center gap-2 w-full"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  <span>Go Back</span>
+                </Button>
+              </div>
             </div>
             <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
               <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="404 Error" className="object-cover w-full h-full" />

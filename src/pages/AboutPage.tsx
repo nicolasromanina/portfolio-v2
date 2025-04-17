@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Terminal from '../components/Terminal';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, GraduationCap, Briefcase, Phone, Mail, MapPin } from 'lucide-react';
+import { User, GraduationCap, Briefcase, Phone, Mail, MapPin, ChevronRight, Download, ExternalLink } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const AboutPage = () => {
   return (
@@ -61,6 +61,17 @@ const AboutPage = () => {
                       <span>Madagascar</span>
                     </div>
                   </div>
+                  
+                  <div className="flex flex-wrap gap-3 mt-6">
+                    <Button variant="default" className="flex items-center gap-2">
+                      <Download className="w-4 h-4" />
+                      Download CV
+                    </Button>
+                    <Button variant="outline" className="flex items-center gap-2">
+                      <ExternalLink className="w-4 h-4" />
+                      View Portfolio
+                    </Button>
+                  </div>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
                   <div className="text-center p-4">
@@ -110,6 +121,11 @@ const AboutPage = () => {
                     <span className="tech-tag">AI/ML</span>
                     <span className="tech-tag">Cloud Technologies</span>
                   </div>
+                  
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <ChevronRight className="w-4 h-4" />
+                    View Certification
+                  </Button>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Computer Engineering" className="object-cover w-full h-full" />
@@ -234,6 +250,11 @@ const AboutPage = () => {
                     <span className="tech-tag">Next.js</span>
                     <span className="tech-tag">CI/CD</span>
                   </div>
+                  
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <ChevronRight className="w-4 h-4" />
+                    View Projects
+                  </Button>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Frontend Development" className="object-cover w-full h-full" />
@@ -271,6 +292,11 @@ const AboutPage = () => {
                     <span className="tech-tag">MongoDB</span>
                     <span className="tech-tag">PostgreSQL</span>
                   </div>
+                  
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <ChevronRight className="w-4 h-4" />
+                    View Case Studies
+                  </Button>
                 </div>
                 <div className="border-2 border-brutalist-black h-64 flex items-center justify-center bg-brutalist-grey/30 hover-glow overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" alt="Full Stack Development" className="object-cover w-full h-full" />
