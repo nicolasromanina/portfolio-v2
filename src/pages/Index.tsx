@@ -100,11 +100,12 @@ const Index = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
           transition={{ delay: 0.2 }}
         >
           <motion.img 
-            src="https://avatars.githubusercontent.com/u/12345678?v=4" 
+            src="/profile.jpg" 
             alt="Nicolas Romanina" 
             className="w-24 h-24 rounded-full border-2 border-green-400"
             whileHover={{ scale: 1.1 }}
           />
+
           <div>
             <h1 className={`text-5xl font-bold ${currentTheme.accent} mb-2 font-mono`}>
               Nicolas ROMANINA
