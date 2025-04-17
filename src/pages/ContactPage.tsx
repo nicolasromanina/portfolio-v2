@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Terminal from '../components/Terminal';
 import { toast } from '../hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,6 +15,10 @@ interface FormData {
   subject: string;
   message: string;
 }
+
+const EMAIL_SERVICE_ID = 'service_gs48rp9';
+const EMAIL_TEMPLATE_ID = 'template_21h7q16';
+const EMAIL_PUBLIC_KEY = 'qGQxArshJNM3ldvEP';
 
 const ContactPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
   const navigate = useNavigate();
@@ -72,17 +77,30 @@ const ContactPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
 
     setIsSubmitting(true);
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Form submitted:', formData);
+      const result = await emailjs.send(
+        EMAIL_SERVICE_ID,
+        EMAIL_TEMPLATE_ID,
+        {
+          from_name: formData.name, // Map to match EmailJS template
+          reply_to: formData.email, // Map to match EmailJS template
+          subject: formData.subject,
+          message: formData.message,
+        },
+        EMAIL_PUBLIC_KEY
+      );
+
+      console.log('EmailJS response:', result);
+
       toast({
         title: "Message Sent!",
         description: "Thank you for reaching out. I'll get back to you soon.",
         className: `${currentTheme.button} text-white`
       });
+
       setFormData({ name: '', email: '', subject: '', message: '' });
       setErrors({});
     } catch (error) {
+      console.error('EmailJS error:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again later.",
@@ -100,6 +118,7 @@ const ContactPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
+      {/* HEADER */}
       <header className="mb-8">
         <motion.h1 
           className={`text-4xl font-bold ${currentTheme.accent} mb-2 font-mono`}
@@ -119,6 +138,7 @@ const ContactPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
         </motion.p>
       </header>
 
+      {/* TERMINAL */}
       <motion.div 
         className="mb-8"
         initial={{ y: 20, opacity: 0 }}
@@ -154,6 +174,7 @@ Collaborations: Interested in open-source projects
         />
       </motion.div>
 
+      {/* CONTACT + FORM */}
       <div className="content-section mb-16">
         <motion.div 
           className="flex items-center mb-10"
@@ -174,20 +195,13 @@ Collaborations: Interested in open-source projects
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <Card 
-              className={`group ${currentTheme.card} transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}
-              role="article"
-              aria-labelledby="contact-title"
-            >
+            {/* Contact Info Card */}
+            <Card className={`group ${currentTheme.card} transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}>
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   <div>
-                    <CardTitle id="contact-title" className="font-sans text-2xl">
-                      Contact Information
-                    </CardTitle>
-                    <CardDescription className="font-mono text-xs mt-1">
-                      Nicolas ROMANINA
-                    </CardDescription>
+                    <CardTitle className="font-sans text-2xl">Contact Information</CardTitle>
+                    <CardDescription className="font-mono text-xs mt-1">Nicolas ROMANINA</CardDescription>
                   </div>
                   <Badge className={`flex items-center space-x-1 ${currentTheme.accent} bg-opacity-20`}>
                     <span className="text-xs">Available</span>
@@ -198,7 +212,7 @@ Collaborations: Interested in open-source projects
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="md:col-span-2">
                     <p className={`font-sans mb-6 ${currentTheme.text}`}>
-                      I'm excited to connect for new projects, collaborations, or just to discuss tech. Reach out via any of these channels, and let's create something extraordinary together!
+                      I'm excited to connect for new projects, collaborations, or just to discuss tech. Reach out via any of these channels.
                     </p>
                     <div className="space-y-4 mb-6">
                       <div className="flex items-center gap-3">
@@ -216,234 +230,72 @@ Collaborations: Interested in open-source projects
                     </div>
                     <h3 className="font-bold mb-3 text-lg">Connect with Me</h3>
                     <div className="flex gap-4 mb-6">
-                      <motion.a 
-                        href="https://github.com/nicolasromanina" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Github className={`h-6 w-6 ${currentTheme.accent}`} />
-                      </motion.a>
-                      <motion.a 
-                        href="https://linkedin.com/in/nicolasromanina" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Linkedin className={`h-6 w-6 ${currentTheme.accent}`} />
-                      </motion.a>
-                      <motion.a 
-                        href="https://twitter.com/nicolasromanina" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Twitter className={`h-6 w-6 ${currentTheme.accent}`} />
-                      </motion.a>
+                      <a href="https://github.com/nicolasromanina" target="_blank" rel="noopener noreferrer"><Github className={`h-6 w-6 ${currentTheme.accent}`} /></a>
+                      <a href="https://linkedin.com/in/nicolasromanina" target="_blank" rel="noopener noreferrer"><Linkedin className={`h-6 w-6 ${currentTheme.accent}`} /></a>
+                      <a href="https://twitter.com/nicolasromanina" target="_blank" rel="noopener noreferrer"><Twitter className={`h-6 w-6 ${currentTheme.accent}`} /></a>
                     </div>
-                    <Button 
-                      className={`${currentTheme.button} flex items-center gap-2`}
-                      onClick={() => navigate('/projects')}
-                    >
+                    <Button className={`${currentTheme.button} flex items-center gap-2`} onClick={() => navigate('/projects')}>
                       <span>View Portfolio</span>
                     </Button>
                   </div>
-                  <motion.div 
-                    className="relative h-64 overflow-hidden rounded-lg"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img 
-                      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" 
-                      alt="Contact" 
-                      className="object-cover w-full h-full"
-                      loading="lazy"
-                    />
+                  <div className="relative h-64 overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Contact" className="object-cover w-full h-full" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  </motion.div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card 
-              className={`group ${currentTheme.card} transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}
-              role="article"
-              aria-labelledby="message-title"
-            >
+            {/* Message Form */}
+            <Card className={`group ${currentTheme.card} transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}>
               <CardHeader className="pb-2">
-                <CardTitle id="message-title" className="font-sans text-2xl">
-                  Send Me a Message
-                </CardTitle>
-                <CardDescription className="font-mono text-xs mt-1">
-                  I'll respond as soon as possible
-                </CardDescription>
+                <CardTitle className="font-sans text-2xl">Send Me a Message</CardTitle>
+                <CardDescription className="font-mono text-xs mt-1">I'll respond as soon as possible</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="md:col-span-2">
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div>
-                        <label htmlFor="name" className="block font-bold mb-1 text-sm">
-                          Name
-                        </label>
-                        <motion.input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          className={`w-full p-2 rounded-md border ${currentTheme.input} focus:outline-none focus:ring-2 transition-all duration-300`}
-                          required
-                          whileFocus={{ scale: 1.02 }}
-                        />
-                        {errors.name && (
-                          <motion.p 
-                            className="text-red-500 text-xs mt-1"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                          >
-                            {errors.name}
-                          </motion.p>
-                        )}
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block font-bold mb-1 text-sm">
-                          Email
-                        </label>
-                        <motion.input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          className={`w-full p-2 rounded-md border ${currentTheme.input} focus:outline-none focus:ring-2 transition-all duration-300`}
-                          required
-                          whileFocus={{ scale: 1.02 }}
-                        />
-                        {errors.email && (
-                          <motion.p 
-                            className="text-red-500 text-xs mt-1"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                          >
-                            {errors.email}
-                          </motion.p>
-                        )}
-                      </div>
-                      <div>
-                        <label htmlFor="subject" className="block font-bold mb-1 text-sm">
-                          Subject
-                        </label>
-                        <motion.input
-                          type="text"
-                          id="subject"
-                          name="subject"
-                          value={formData.subject}
-                          onChange={handleChange}
-                          className={`w-full p-2 rounded-md border ${currentTheme.input} focus:outline-none focus:ring-2 transition-all duration-300`}
-                          required
-                          whileFocus={{ scale: 1.02 }}
-                        />
-                        {errors.subject && (
-                          <motion.p 
-                            className="text-red-500 text-xs mt-1"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                          >
-                            {errors.subject}
-                          </motion.p>
-                        )}
-                      </div>
-                      <div>
-                        <label htmlFor="message" className="block font-bold mb-1 text-sm">
-                          Message
-                        </label>
-                        <motion.textarea
-                          id="message"
-                          name="message"
-                          value={formData.message}
-                          onChange={handleChange}
-                          rows={5}
-                          className={`w-full p-2 rounded-md border ${currentTheme.input} focus:outline-none focus:ring-2 transition-all duration-300 resize-y`}
-                          required
-                          whileFocus={{ scale: 1.02 }}
-                        />
-                        {errors.message && (
-                          <motion.p 
-                            className="text-red-500 text-xs mt-1"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                          >
-                            {errors.message}
-                          </motion.p>
-                        )}
-                      </div>
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Button
-                          type="submit"
-                          className={`w-full flex items-center justify-center gap-2 ${currentTheme.button}`}
-                          disabled={isSubmitting}
-                        >
-                          <motion.span
-                            animate={{ rotate: isSubmitting ? 360 : 0 }}
-                            transition={{ duration: 1, repeat: isSubmitting ? Infinity : 0 }}
-                          >
-                            <Send className="w-4 h-4" />
-                          </motion.span>
-                          <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                        </Button>
-                      </motion.div>
-                    </form>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {['name', 'email', 'subject'].map(field => (
+                    <div key={field}>
+                      <label htmlFor={field} className="block font-bold mb-1 text-sm capitalize">{field}</label>
+                      <input
+                        id={field}
+                        name={field}
+                        type={field === 'email' ? 'email' : 'text'}
+                        value={formData[field as keyof FormData]}
+                        onChange={handleChange}
+                        className={`w-full p-2 rounded-md border ${currentTheme.input}`}
+                        required
+                      />
+                      {errors[field as keyof FormData] && (
+                        <p className="text-red-500 text-xs mt-1">{errors[field as keyof FormData]}</p>
+                      )}
+                    </div>
+                  ))}
+                  <div>
+                    <label htmlFor="message" className="block font-bold mb-1 text-sm">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      className={`w-full p-2 rounded-md border ${currentTheme.input}`}
+                      required
+                    />
+                    {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
                   </div>
-                  <div className="md:col-span-1">
-                    <motion.div 
-                      className={`p-6 h-full rounded-lg ${currentTheme.card}`}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.7 }}
-                    >
-                      <h3 className="text-xl font-bold mb-4">Availability</h3>
-                      <div className="space-y-4">
-                        {[
-                          {
-                            title: 'Freelance Work',
-                            description: 'Available for project-based work and consultancy'
-                          },
-                          {
-                            title: 'Full-time Positions',
-                            description: 'Open to interesting opportunities'
-                          },
-                          {
-                            title: 'Collaborations',
-                            description: 'Interested in open-source and side projects'
-                          }
-                        ].map((item, index) => (
-                          <motion.div
-                            key={index}
-                            className={`p-4 rounded-lg border ${currentTheme.card}`}
-                            whileHover={{ scale: 1.03 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <h4 className="font-bold mb-2">{item.title}</h4>
-                            <p className={`text-sm ${currentTheme.muted}`}>{item.description}</p>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
+                  <Button type="submit" disabled={isSubmitting} className={`w-full flex items-center justify-center gap-2 ${currentTheme.button}`}>
+                    <Send className="w-4 h-4" />
+                    <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </motion.div>
         </AnimatePresence>
       </div>
 
+      {/* FOOTER TIP */}
       <motion.div 
         className={`mt-6 p-4 rounded-lg backdrop-blur-md ${currentTheme.card} text-sm font-sans`}
         initial={{ opacity: 0 }}
