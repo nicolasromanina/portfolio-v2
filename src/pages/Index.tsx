@@ -117,10 +117,10 @@ const Index = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
               <a href="https://github.com/nicolasromanina" target="_blank" rel="noopener noreferrer">
                 <Github className={`h-6 w-6 ${currentTheme.accent} hover:scale-110 transition-transform`} />
               </a>
-              <a href="https://linkedin.com/in/nicolasromanina" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/nicolas-romanina/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className={`h-6 w-6 ${currentTheme.accent} hover:scale-110 transition-transform`} />
               </a>
-              <a href="https://twitter.com/nicolasromanina" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/nicolasromanina" target="_blank" rel="noopener noreferrer">
                 <Twitter className={`h-6 w-6 ${currentTheme.accent} hover:scale-110 transition-transform`} />
               </a>
             </div>
