@@ -28,7 +28,7 @@ interface Achievement {
 }
 
 const WELCOME_MESSAGE = `
-🌌 Welcome to DevTerminal v4.1.0
+🌌 Welcome to My portfolio
 Type 'help' to see available commands.
 Use ↑↓ for history, Tab for suggestions, Shift+Enter for multi-line input.
 Ctrl+L to clear, Ctrl+S to toggle sound effects.
@@ -188,10 +188,9 @@ const Terminal: React.FC<TerminalProps> = ({
       handler: () => {
         addAchievement('Bio Reader', 'Viewed about information');
         return `
-Full Stack Developer | 5+ Years Experience
-- Expertise: React, TypeScript, Node.js
+Full Stack Developer 
+- Expertise: Java, Spring boot, React, TypeScript, Node.js
 - Focus: Performance, UX, Scalable Systems
-- Location: Remote
         `;
       }
     },
@@ -206,6 +205,8 @@ Frontend:
   - TypeScript (90%)
   - Next.js (85%)
 Backend:
+ - Java (88%)
+  - Spring boot (88%)
   - Node.js (88%)
   - GraphQL (80%)
   - PostgreSQL (85%)

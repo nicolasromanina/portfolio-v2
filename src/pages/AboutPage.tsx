@@ -38,33 +38,32 @@ const AboutPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
   const experiences: Experience[] = [
     {
       id: '1',
-      title: 'Senior Frontend Developer',
-      company: 'TechCorp',
-      period: '2021-Present',
-      description: 'Leading frontend development for enterprise applications, focusing on performance and UX.',
+      title: '2023-2024: Full Stack Developer',
+      company: 'Madagascar 3M',
+      period: '2023-2024',
+      description: 'Developing scalable web applications with a focus on performance and user experience.',
       achievements: [
-        'Led a team of 5 developers to rebuild the flagship product',
+        'Developed user-facing features (React, TypeScript)',
         'Implemented CI/CD pipeline reducing deployment time by 70%',
-        'Mentored junior developers and conducted code reviews',
+        'Optimized backend services (Node.js, Express)',
+        'Enhanced application security with best practices',
         'Optimized app performance, reducing load time by 40%'
       ],
-      technologies: ['React', 'TypeScript', 'Next.js', 'CI/CD'],
+      technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'CI/CD'],
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
       badge: 'Current Position'
     },
     {
       id: '2',
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      period: '2019-2021',
+      title: 'Intern as a Backend Java Developer',
+      company: 'MJS',
+      period: '2022-2023',
       description: 'Worked on both frontend and backend in a fast-paced startup environment.',
       achievements: [
-        'Developed user-facing features with React and TypeScript',
-        'Built RESTful APIs using Node.js and Express',
-        'Implemented database models with MongoDB and PostgreSQL',
-        'Participated in product design and UX decisions'
+        'Worked on backend services (Java, Spring Boot)',
+        'Implemented CI/CD pipeline (Jenkins, Docker)',
       ],
-      technologies: ['React', 'Node.js', 'MongoDB', 'PostgreSQL'],
+      technologies: ['Java', 'Spring boot', 'MongoDB', 'MySQL'],
       image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
       badge: 'Previous Position'
     }
@@ -74,7 +73,7 @@ const AboutPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
     {
       id: '1',
       degree: 'Master in Computer Engineering',
-      institution: 'University of Tananariva',
+      institution: 'University of Antananarivo',
       year: '2023',
       description: 'Advanced study in computer engineering principles, focusing on software architecture and system design.',
       keyAreas: [
@@ -90,8 +89,8 @@ const AboutPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
     },
     {
       id: '2',
-      degree: 'Bachelor in Signal and System Engineering',
-      institution: 'University of Tananariva',
+      degree: 'Bachelor in Physics of Signals and Systems Engineering',
+      institution: 'University of Antananarivo',
       year: '2022',
       description: 'Comprehensive education in signal processing and fundamental computing concepts.',
       keyAreas: [

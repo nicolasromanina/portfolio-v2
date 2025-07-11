@@ -25,33 +25,33 @@ const Index = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
   const projects: Project[] = [
     {
       id: '1',
-      title: 'E-commerce Platform',
-      description: 'A comprehensive e-commerce solution with real-time inventory management.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Redux'],
+      title: 'Pharmacy Management',
+      description: 'A  Pharmacy Management System API built using Spring Boot. It includes core functionalities for user authentication (login and registration), sales management, inventory tracking, customer management, reporting, and dashboard views. JWT tokens are used for secure user sessions.',
+      technologies: ['JAVA', 'Spring boot', 'MongoDB'],
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
       liveDemo: '#',
-      sourceCode: '#',
+      sourceCode: 'https://github.com/nicolasromanina/pharmacy-api',
       badge: { icon: <Star className="h-3 w-3" />, label: 'Featured' }
     },
     {
-      id: '2',
-      title: 'Analytics Dashboard',
-      description: 'Real-time analytics dashboard with customizable widgets.',
-      technologies: ['Next.js', 'D3.js', 'GraphQL', 'AWS'],
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
-      liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Zap className="h-3 w-3" />, label: 'New' }
-    },
-    {
       id: '3',
-      title: 'Content Management System',
-      description: 'A modern CMS with role-based access control.',
-      technologies: ['TypeScript', 'PostgreSQL', 'Express', 'React'],
+      title: 'To-Do List',
+      description: 'A full-stack task management application with a Spring Boot backend and a React + TypeScript + Vite frontend. It allows users to create, update, and delete tasks, with real-time updates and a responsive design.',
+      technologies: ['Java', 'Spring Boot', 'Typescript', 'React', 'MongoDB'],
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
       liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Award className="h-3 w-3" />, label: 'Award-winning' }
+      sourceCode: 'https://github.com/nicolasromanina/to-do-list',
+      badge: { icon: <Award className="h-3 w-3" />, label: 'Featured' }
+    },
+        {
+      id: '3',
+      title: 'PrintPro - Print Management System',
+      description: 'A complete web application for managing print services with client and administrator interface.',
+      technologies: ['Node.js', 'Javascript', 'Typescript', 'React', 'MongoDB'],
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+      liveDemo: '#',
+      sourceCode: 'https://github.com/nicolasromanina/3Mfront',
+      badge: { icon: <Award className="h-3 w-3" />, label: 'Featured' }
     }
   ];
 
@@ -100,7 +100,7 @@ const Index = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
           transition={{ delay: 0.2 }}
         >
           <motion.img 
-            src="/profile.jpg" 
+            src="/Profile.png" 
             alt="Nicolas Romanina" 
             className="w-24 h-24 rounded-full border-2 border-green-400"
             whileHover={{ scale: 1.1 }}
@@ -111,7 +111,7 @@ const Index = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
               Nicolas ROMANINA
             </h1>
             <p className={`text-xl ${currentTheme.muted} font-sans`}>
-              Full Stack Developer | Crafting Modern Web Solutions
+              Full Stack Developer | Crafting Modern IT Solutions
             </p>
             <div className="flex gap-4 mt-4">
               <a href="https://github.com/nicolasromanina" target="_blank" rel="noopener noreferrer">
@@ -142,8 +142,8 @@ const Index = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
               name: 'education',
               description: 'Show education history',
               handler: () => `
-2023: Master in Computer Engineering, University of Tananariva
-2022: Bachelor in Signal and System Engineering, University of Tananariva
+2023: Master in Computer Engineering, University of Antananarivo
+2022: Bachelor in Signal and System Engineering, University of Antananarivo
 High School: Baccalaureate Series C, High School Tanambe
               `
             },
@@ -151,15 +151,15 @@ High School: Baccalaureate Series C, High School Tanambe
               name: 'experience',
               description: 'Show work experience',
               handler: () => `
-2021-Present: Senior Frontend Developer at TechCorp
-- Led team of 5 developers to rebuild flagship product
-- Implemented CI/CD pipeline (70% faster deployment)
-- Mentored junior developers
-
-2019-2021: Full Stack Developer at StartupXYZ
+              
+2023-2024: Full Stack Developer at Madagascar 3M
 - Developed user-facing features (React, TypeScript)
 - Built RESTful APIs (Node.js, Express)
 - Managed databases (MongoDB, PostgreSQL)
+
+2022-2023: Intern at MJS as a Backend Java Developer 6 months
+- Worked on backend services (Java, Spring Boot)
+- Implemented CI/CD pipeline (Jenkins, Docker)
               `
             },
             {
@@ -407,21 +407,26 @@ Twitter: twitter.com/nicolasromanina
               title: 'Frontend Development',
               description: 'Building responsive and performant UIs.',
               skills: [
-                { name: 'React & React Native', level: 95 },
-                { name: 'TypeScript / JavaScript', level: 90 },
-                { name: 'Tailwind CSS / SCSS', level: 92 }
+
+                { name: 'React & React Native', level: 50 },
+                { name: 'TypeScript / JavaScript', level: 65 },
+                { name: 'Tailwind CSS / SCSS', level: 92 },
+                { name: 'HTML & CSS', level: 95 },
+                { name: 'Bootstrap', level: 95 },
               ],
-              tags: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS']
+              tags: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS']
             },
             {
               title: 'Backend Development',
               description: 'Developing scalable backend services and APIs.',
               skills: [
-                { name: 'Node.js / Express', level: 88 },
-                { name: 'PostgreSQL / MongoDB', level: 85 },
+                { name: 'Java / Spring boot', level: 70 },
+                { name: 'PHP / Laravel', level: 75 },
+                { name: 'Node.js / Express', level: 60 },
+                { name: 'PostgreSQL / MySQL / MongoDB', level: 85 },
                 { name: 'REST API Design', level: 92 }
               ],
-              tags: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL']
+              tags: ['Java','PHP','Spring boot','Node.js', 'Express', 'MongoDB', 'PostgreSQL']
             }
           ].map((skillSet, index) => (
             <motion.div

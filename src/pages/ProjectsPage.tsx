@@ -27,154 +27,80 @@ const ProjectsPage = ({ theme = 'dark' }: { theme?: 'dark' | 'light' }) => {
   const projects: Project[] = [
     {
       id: '1',
-      title: 'E-commerce Platform',
-      description: 'A comprehensive e-commerce solution with real-time inventory management and personalized recommendations.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Redux'],
+      title: 'Pharmacy Management',
+      description: 'A  Pharmacy Management System API built using Spring Boot. It includes core functionalities for user authentication (login and registration), sales management, inventory tracking, customer management, reporting, and dashboard views. JWT tokens are used for secure user sessions.',
+      technologies: ['JAVA', 'Spring boot', 'MongoDB'],
       features: [
-        'User authentication and profile management',
-        'Product search with filters',
-        'Shopping cart and checkout',
-        'Payment gateway integration',
-        'Order tracking',
+        'User Authentication & Authorization',
+        'Sales Management',
+        'Inventory Management',
+        'Customer Management',
+        'Reporting',
         'Admin dashboard with analytics'
       ],
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
       liveDemo: '#',
-      sourceCode: '#',
+      sourceCode: 'https://github.com/nicolasromanina/pharmacy-api',
       badge: { icon: <Star className="h-3 w-3" />, label: 'Featured' },
       category: 'Web'
     },
     {
       id: '2',
-      title: 'Analytics Dashboard',
-      description: 'Real-time analytics dashboard with customizable widgets and comprehensive data visualization.',
-      technologies: ['Next.js', 'D3.js', 'GraphQL', 'AWS'],
+      title: 'RFID Security System',
+      description: 'A security system based on reading RFID badges using a PIC16F877A microcontroller. The system reads an RFID badge via UART, controls a relay for locking/unlocking a door.',
+      technologies: ['C', 'C++'],
       features: [
-        'Real-time data processing',
-        'Interactive charts and graphs',
-        'Customizable dashboard layouts',
-        'Data export in multiple formats',
-        'Automated report generation',
+        'Lecture de tags RFID via UART',
+        'Vérification des tags RFID par rapport à une liste prédéfinie',
+        'Commande d\'un relais pour ouvrir/fermer une porte',
+        'Messages d\'accueil et d\'invite pour scanner un badge',
+        'Gestion robuste des erreurs UART',
         'User permission management'
       ],
       image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
       liveDemo: '#',
       sourceCode: '#',
-      badge: { icon: <Zap className="h-3 w-3" />, label: 'New' },
-      category: 'Web'
+      badge: { icon: <Cpu className="h-3 w-3" />, label: 'IoT' },
+      category: 'IoT'
     },
     {
       id: '3',
-      title: 'Content Management System',
-      description: 'A modern CMS with role-based access control and flexible content modeling.',
-      technologies: ['TypeScript', 'PostgreSQL', 'Express', 'React'],
+      title: 'To-Do List Application',
+      description: 'A full-stack task management application with a Spring Boot backend and a React + TypeScript + Vite frontend. It features user authentication, task management, and a responsive design.',
+      technologies: ['Java 21', 'Spring Boot 3', 'Spring Data MongoDB', 'Maven', 'React', 'TypeScript', 'Vite'],
       features: [
-        'Customizable content types',
-        'Media library with image processing',
-        'Content versioning',
-        'Role-based permissions',
-        'API-first architecture',
-        'SEO optimization tools'
+        'REST API for CRUD operations on tasks',
+        'Input validation and error handling',
+        'CORS configuration for frontend communication',
+        'User authentication with JWT',
+        'Task management with due dates and priorities',
+        'Filter tasks by status (All/Completed/In Progress)',
+        'Responsive design with Tailwind CSS',
       ],
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
       liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Award className="h-3 w-3" />, label: 'Award-winning' },
+      sourceCode: 'https://github.com/nicolasromanina/to-do-list',
+      badge: { icon: <Star className="h-3 w-3" />, label: 'Featured' },
       category: 'Web'
     },
     {
       id: '4',
-      title: 'Fitness Tracking App',
-      description: 'A mobile application for tracking workouts and monitoring fitness progress.',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Expo'],
+      title: 'PrintPro - Print Service Management Application',
+      description: 'A complete web application for managing print services with client and administrator interface. It includes features for managing print services, clients, and administrators, with a focus on user-friendly design and efficient management.',
+      technologies: ['React', 'Typescript', 'Redux', 'Node.js', 'Express', 'MongoDB'],
       features: [
-        'Workout tracking and scheduling',
-        'Custom workout creation',
-        'Progress statistics',
-        'Social sharing',
-        'Notifications and reminders'
-      ],
-      image: 'https://images.unsplash.com/photo-1512941675423-6b1e33a15c91',
-      liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Smartphone className="h-3 w-3" />, label: 'Mobile App' },
-      category: 'Mobile'
-    },
-    {
-      id: '5',
-      title: 'Smart Home Automation System',
-      description: 'An IoT-based system for controlling smart home devices with a centralized dashboard and automation rules.',
-      technologies: ['C++', 'Node-RED', 'MQTT', 'Spring Boot'],
-      features: [
-        'Real-time device control (lights, thermostat, etc.)',
-        'Automation workflows using Node-RED',
-        'RESTful API with Spring Boot',
-        'ESP32-based device firmware in C++',
-        'Mobile and web dashboards',
-        'Voice assistant integration'
+        'Authentication and authorization for clients and administrators',
+        'Client dashboard for managing print services',
+        'Real-time statuses (quote, pending, in progress, completed, delivered, cancelled)',
+        'Chat support: Customer response',
+        'Responsive design with Tailwind CSS',
+        'Search and filter functionality for print services',
       ],
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
       liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Cpu className="h-3 w-3" />, label: 'IoT' },
-      category: 'IoT'
-    },
-    {
-      id: '6',
-      title: 'Environmental Monitoring System',
-      description: 'An IoT solution for monitoring air quality and environmental conditions with real-time data logging.',
-      technologies: ['C++', 'Node-RED', 'Arduino', 'PostgreSQL'],
-      features: [
-        'Sensor data collection (temperature, humidity, PM2.5)',
-        'Data visualization with Node-RED dashboards',
-        'Arduino-based sensor nodes programmed in C++',
-        'Cloud storage with PostgreSQL',
-        'Alert system for threshold breaches',
-        'API for third-party integrations'
-      ],
-      image: 'https://images.unsplash.com/photo-1508514177221-188b274676af',
-      liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Cpu className="h-3 w-3" />, label: 'IoT' },
-      category: 'IoT'
-    },
-    {
-      id: '7',
-      title: 'IoT Control Mobile App',
-      description: 'A mobile app for controlling and monitoring IoT devices with a user-friendly interface.',
-      technologies: ['Java', 'Android SDK', 'Firebase', 'MQTT'],
-      features: [
-        'Real-time device status updates',
-        'Remote control of IoT devices',
-        'Push notifications for alerts',
-        'User authentication with Firebase',
-        'MQTT-based communication',
-        'Customizable device groups'
-      ],
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3',
-      liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Smartphone className="h-3 w-3" />, label: 'Mobile App' },
-      category: 'Mobile'
-    },
-    {
-      id: '8',
-      title: 'Health Monitoring App',
-      description: 'A mobile app for tracking health metrics and integrating with wearable IoT devices.',
-      technologies: ['React Native', 'Spring Boot', 'Firebase', 'Bluetooth'],
-      features: [
-        'Real-time health data from wearables (heart rate, steps)',
-        'Spring Boot backend for data processing',
-        'Bluetooth connectivity for device pairing',
-        'Personalized health insights',
-        'Data export to PDF',
-        'User authentication and data privacy'
-      ],
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef',
-      liveDemo: '#',
-      sourceCode: '#',
-      badge: { icon: <Smartphone className="h-3 w-3" />, label: 'Mobile App' },
-      category: 'Mobile'
+      sourceCode: 'https://github.com/nicolasromanina/3Mfront',
+      badge: { icon: <Smartphone className="h-3 w-3" />, label: 'web' },
+      category: 'web'
     }
   ];
 
